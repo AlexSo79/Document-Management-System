@@ -1,0 +1,124 @@
+{
+  "categories": [
+    {
+      "id": "cat-01",
+      "name": "Risorse Umane",
+      "docs": [
+        {
+          "id": "doc-01-01",
+          "title": "Guida Onboarding Nuovi Assunti",
+          "content": "<h1>Benvenuto nel team!</h1><p>Questo documento contiene tutti i passaggi necessari per il tuo inserimento in azienda durante la prima settimana.</p><ul><li>Configurazione account</li><li>Presentazione del team</li><li>Formazione iniziale</li></ul>"
+        },
+        {
+          "id": "doc-01-02",
+          "title": "Codice Etico Aziendale",
+          "content": "<h1>Il nostro Codice Etico</h1><p>Descrive i valori fondamentali di integrità, rispetto e professionalità che guidano ogni nostra azione.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-02",
+      "name": "Marketing e Comunicazione",
+      "docs": [
+        {
+          "id": "doc-02-01",
+          "title": "Linee Guida Brand Identity",
+          "content": "<h1>Brand Identity</h1><p>Come utilizzare correttamente il nostro logo, i colori e i font ufficiali in tutte le comunicazioni.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-03",
+      "name": "Vendite",
+      "docs": [
+        {
+          "id": "doc-03-01",
+          "title": "Script Chiamate a Freddo Q3",
+          "content": "<h1>Script per il Q3</h1><p>Questo script è ottimizzato per presentare la nuova linea di prodotti 'Omega' ai potenziali clienti.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-04",
+      "name": "Sviluppo Prodotto 'Phoenix'",
+      "docs": [
+        {
+          "id": "doc-04-01",
+          "title": "Roadmap Prodotto 2025",
+          "content": "<h1>Roadmap 2025</h1><p>Le principali funzionalità previste per i prossimi rilasci, suddivise per trimestre.</p>"
+        },
+        {
+          "id": "doc-04-02",
+          "title": "Guida alle API Interne",
+          "content": "<h1>Documentazione API</h1><p>Endpoint, parametri e esempi di codice per l'integrazione con il nostro sistema.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-05",
+      "name": "Supporto Tecnico",
+      "docs": [
+        {
+          "id": "doc-05-01",
+          "title": "Risoluzione Problemi di Connessione",
+          "content": "<h1>Problemi di Connessione?</h1><p>Segui questa checklist per risolvere i problemi di connettività di rete più comuni.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-06",
+      "name": "Amministrazione e Finanza",
+      "docs": [
+        {
+          "id": "doc-06-01",
+          "title": "Procedura Rimborso Spese",
+          "content": "<h1>Come chiedere un rimborso</h1><p>Istruzioni e modulo da compilare per il rimborso delle spese di trasferta.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-07",
+      "name": "Legale e Compliance",
+      "docs": [
+        {
+          "id": "doc-07-01",
+          "title": "Policy Privacy GDPR",
+          "content": "<h1>Informativa GDPR</h1><p>Come trattiamo i dati personali in conformità con il Regolamento Generale sulla Protezione dei Dati (UE) 2016/679.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-08",
+      "name": "Formazione Interna",
+      "docs": [
+        {
+          "id": "doc-08-01",
+          "title": "Corso Sicurezza Informatica",
+          "content": "<h1>Sicurezza Informatica</h1><p>Slide e materiali del corso obbligatorio sulla sicurezza informatica per tutti i dipendenti.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-09",
+      "name": "Procedure IT",
+      "docs": [
+        {
+          "id": "doc-09-01",
+          "title": "Come configurare la VPN",
+          "content": "<h1>Guida alla VPN</h1><p>Passaggi illustrati per configurare la connessione VPN aziendale sul tuo dispositivo.</p>"
+        }
+      ]
+    },
+    {
+      "id": "cat-10",
+      "name": "Logistica e Operazioni",
+      "docs": [
+        {
+          "id": "doc-10-01",
+          "title": "Gestione Resi",
+          "content": "<h1>Procedura di Reso</h1><p>Istruzioni per la gestione dei resi da parte dei clienti, dalla richiesta alla spedizione.</p>"
+        }
+      ]
+    }
+  ]
+}

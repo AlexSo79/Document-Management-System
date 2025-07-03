@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-family: 'Inter', sans-serif;
+  --primary-color: #3B82F6; /* Un blu più moderno */
+  --primary-color-hover: #2563EB;
+  --light-gray: #F9FAFB;
+  --border-color: #E5E7EB;
+  --text-dark: #1F2937;
+  --text-light: #6B7280;
+  --text-xlight: #9CA3AF;
+  --green: #10B981;
+  --red: #EF4444;
+  --yellow: #F59E0B;
+  --blue: #3B82F6;
+  --purple: #8B5CF6;
+  --gray: #6B7280;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+  color: var(--text-dark);
+}
+
+/* Auth Page */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light-gray);
+}
+.auth-box {
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 360px;
+    text-align: center;
+}
+.auth-box h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+.auth-box input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.auth-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.auth-box button:hover {
+    background-color: var(--primary-color-hover);
+}
+.auth-error {
+    color: var(--red);
+    margin-top: 15px;
+}
+.auth-toggle {
+    margin-top: 20px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Layout Principale */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.main-content-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.document-panel {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.metadata-panel {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    align-self: flex-start;
+}
+
+
+/* Sidebar */
+.sidebar-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+.sidebar-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.filters-container {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.filters-container select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+.docs-list-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+/* Stili per la lista documenti */
+.doc-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 8px;
+}
+.doc-list-item:hover {
+    background-color: var(--light-gray);
+}
+.doc-list-item.active {
+    background-color: #DBEAFE; /* Blu più chiaro */
+}
+.doc-list-item.active .doc-title {
+    color: #1E40AF; /* Blu scuro */
+}
+.doc-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+.doc-status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Colori per gli stati dei documenti */
+.status-bozza { background-color: #E5E7EB; color: #4B5563; }
+.status-in-approvazione { background-color: #DBEAFE; color: #3B82F6; }
+.status-approvato { background-color: #D1FAE5; color: #059669; }
+.status-rifiutato { background-color: #FEE2E2; color: #EF4444; }
+.status-pubblicato { background-color: #E9D5FF; color: #8B5CF6; }
+
+
+/* Profilo Utente */
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border-top: 1px solid var(--border-color);
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 12px;
+}
+.user-info {
+    flex-grow: 1;
+}
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+.user-role {
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: capitalize;
+}
+.logout-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: color 0.2s, background-color 0.2s;
+}
+.logout-button:hover {
+    color: var(--primary-color);
+    background-color: #EFF6FF;
+}
+
+/* Pannello Metadati */
+.metadata-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+.metadata-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.metadata-view p {
+    margin: 12px 0;
+    color: var(--text-light);
+    font-size: 14px;
+}
+.metadata-view strong {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.metadata-form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.metadata-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+.edit-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+/* Azioni Workflow e Cronologia */
+.workflow-actions, .versions-history {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+.workflow-actions h4, .versions-history h4 {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.workflow-info {
+    font-size: 13px;
+    color: var(--text-light);
+    background-color: #F3F4F6;
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 6px;
+}
+.versions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+.version-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border-color);
+}
+.version-item:last-child {
+    border-bottom: none;
+}
+.version-item .version-actions button {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.version-item .version-actions button:hover {
+    background-color: #EFF6FF;
+    border-color: #DBEAFE;
+}
+
+
+/* Pulsanti */
+.button-edit, 
+.button-save, 
+.button-cancel, 
+.button-seed, 
+.button-workflow,
+.button-ai {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.button-edit:hover, .button-save:hover, .button-cancel:hover, .button-seed:hover, .button-workflow:hover, .button-ai:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.button-edit { background-color: var(--primary-color); }
+.button-save { background-color: var(--green); }
+.button-cancel { background-color: var(--gray); }
+.button-seed { 
+    width: 100%; 
+    margin-top: 10px; 
+    background-color: #06B6D4; 
+}
+.button-ai {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: var(--yellow);
+    color: var(--text-dark);
+}
+.button-ai:disabled {
+    background-color: #E5E7EB;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.button-workflow {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #4F46E5; 
+}
+.button-workflow.approve { background-color: var(--green); }
+.button-workflow.reject { background-color: var(--red); }
