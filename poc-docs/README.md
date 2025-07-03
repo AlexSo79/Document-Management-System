@@ -43,8 +43,6 @@ Segui questi passaggi per avviare il progetto in locale.
 - Un account Google per creare un progetto Firebase/Google Cloud.
 
 1. Clona il Repository
-git clone https://github.com/tuo-username/tuo-repository.git
-cd tuo-repository
 
 2. Installa le Dipendenze
 Esegui il seguente comando per installare tutte le librerie necessarie:
@@ -52,6 +50,7 @@ Esegui il seguente comando per installare tutte le librerie necessarie:
 npm install
 
 3. Configurazione di Firebase
+
 Vai alla Console di Firebase e crea un nuovo progetto.
 
 All'interno del progetto, vai su Costruisci > Authentication > Metodi di accesso e abilita "Email/Password".
@@ -63,6 +62,7 @@ Nelle Impostazioni progetto (icona a forma di ingranaggio), registra una nuova a
 Copia l'oggetto di configurazione firebaseConfig.
 
 4. Configurazione dell'API di Gemini
+
 Vai alla Console di Google Cloud e assicurati che il progetto selezionato sia lo stesso di Firebase.
 
 Vai su API e servizi > Libreria, cerca "Generative Language API" e abilitala.
@@ -74,6 +74,7 @@ Vai su API e servizi > Credenziali, clicca su "+ CREA CREDENZIALI" e seleziona "
 Copia la chiave API generata.
 
 5. Inserisci le Chiavi nel Codice
+
 Apri il file src/App.jsx e inserisci le chiavi che hai appena copiato nei rispettivi segnaposto:
 
 // Inserisci la configurazione del tuo progetto Firebase
@@ -86,6 +87,7 @@ const firebaseConfig = {
 const apiKey = "LA_TUA_CHIAVE_API_GEMINI";
 
 6. Avvia l'Applicazione
+
 Una volta configurato tutto, avvia il server di sviluppo:
 
 npm run dev
