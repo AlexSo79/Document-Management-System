@@ -13,14 +13,14 @@ import {
   signInWithEmailAndPassword, signOut 
 } from "firebase/auth";
 
-// --- CONFIGURAZIONE FIREBASE (MANUALE) ---
+// --- CONFIGURAZIONE SICURA TRAMITE VARIABILI D'AMBIENTE ---
 const firebaseConfig = {
-  apiKey: "AIzaSyBy_IXiyVz2farR14LOJuXXx-JnkYibxK4",
-  authDomain: "gestione-documentale-mvp.firebaseapp.com",
-  projectId: "gestione-documentale-mvp",
-  storageBucket: "gestione-documentale-mvp.firebasestorage.app",
-  messagingSenderId: "84401429106",
-  appId: "1:84401429106:web:7275aaa386a7a8343900eb"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
@@ -193,8 +193,14 @@ function App() {
             }
         };
 
-        const apiKey = "AIzaSyAJ1-x9eyb5Lzx4j4Te5e8kTHM-QYClJUY";
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
         
+        if (!apiKey) {
+            alert("La chiave API di Gemini non è stata trovata. Assicurati di averla impostata nel tuo file .env.local");
+            setIsAiAnalyzing(false);
+            return;
+        }
+
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
         
         const response = await fetch(apiUrl, {
@@ -359,7 +365,7 @@ function App() {
                 {isEditMode ? ( 
                   <div className="document-editor">
                     <Editor
-                        apiKey='u1gu1848qr05yz96zrroqxx89p373d3lsfx249jogkrnnxey'
+                        apiKey='INSERISCI_LA_TUA_CHIAVE_TINYMCE_QUI'
                         value={editingContent}
                         init={{ height: "100%", menubar: false, plugins: 'lists link image paste help wordcount', toolbar: 'undo redo | blocks | bold italic | bullist numlist | link' }}
                         onEditorChange={(content) => setEditingContent(content)}
