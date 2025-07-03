@@ -1,41 +1,46 @@
-Knowledge Base MVP - Un Sistema di Gestione Documentale Intelligente
+# Knowledge Base MVP - Un Sistema di Gestione Documentale Intelligente
+
 Questo repository contiene il codice sorgente per un'applicazione web avanzata per la gestione documentale, costruita con React e Firebase. L'applicazione è progettata per superare i limiti dei sistemi di archiviazione tradizionali basati su cartelle, adottando una filosofia incentrata sui metadati, workflow di approvazione e integrazione con l'intelligenza artificiale, ispirata a piattaforme enterprise come M-Files.
 
-Funzionalità Principali
+## Funzionalità Principali
+
 L'applicazione è stata sviluppata attraverso una roadmap incrementale, implementando le seguenti funzionalità:
 
-Gestione basata sui Metadati (v1.1): Ogni documento è definito da ciò che è, non da dove si trova. L'interfaccia permette di visualizzare e modificare metadati chiave come "Tipo di Documento", "Stato" e "Reparto".
+- Gestione basata sui Metadati (v1.1): Ogni documento è definito da ciò che è, non da dove si trova. L'interfaccia permette di visualizzare e modificare metadati chiave come "Tipo di Documento", "Stato" e "Reparto".
 
-Workflow di Approvazione (v1.2): Un ciclo di vita del documento che permette di spostare un file attraverso stati come Bozza, In Approvazione, Approvato e Rifiutato, con azioni contestuali disponibili per gli utenti appropriati.
+- Workflow di Approvazione (v1.2): Un ciclo di vita del documento che permette di spostare un file attraverso stati come Bozza, In Approvazione, Approvato e Rifiutato, con azioni contestuali disponibili per gli utenti appropriati.
 
-Controllo delle Versioni (v1.3): Ogni salvataggio crea una nuova versione del documento, preservando la cronologia completa delle modifiche. L'interfaccia permette di visualizzare e ripristinare le versioni precedenti.
+- Controllo delle Versioni (v1.3): Ogni salvataggio crea una nuova versione del documento, preservando la cronologia completa delle modifiche. L'interfaccia permette di visualizzare e ripristinare le versioni precedenti.
 
-Gestione Utenti e Permessi (v2.0): Sistema di autenticazione reale (Email/Password) con tre ruoli utente:
+- Gestione Utenti e Permessi (v2.0): Sistema di autenticazione reale (Email/Password) con tre ruoli utente:
 
-Amministratore: Controllo completo sul sistema e sui documenti.
+  - Amministratore: Controllo completo sul sistema e sui documenti.
 
-Editor: Può creare e modificare documenti, partecipando ai workflow.
+  - Editor: Può creare e modificare documenti, partecipando ai workflow.
 
-Lettore: Può solo visualizzare e cercare i documenti.
+  - Lettore: Può solo visualizzare e cercare i documenti.
 
-Integrazione AI (v2.1): Utilizzo dell'API di Google Gemini per analizzare il contenuto dei documenti e suggerire automaticamente i metadati (tipo e reparto), riducendo l'inserimento manuale e aumentando la coerenza.
+- Integrazione AI (v2.1): Utilizzo dell'API di Google Gemini per analizzare il contenuto dei documenti e suggerire automaticamente i metadati (tipo e reparto), riducendo l'inserimento manuale e aumentando la coerenza.
 
-Stack Tecnologico
-Frontend: React (con Vite per il setup)
+## Stack Tecnologico
 
-Backend & Database: Google Firebase (Firestore Database, Authentication)
+- Frontend: React (con Vite per il setup)
 
-Editor di Testo: TinyMCE
+- Backend & Database: Google Firebase (Firestore Database, Authentication)
 
-Intelligenza Artificiale: Google Gemini API
+- Editor di Testo: TinyMCE
 
-Setup e Installazione
+- Intelligenza Artificiale: Google Gemini API
+
+## Setup e Installazione
+
 Segui questi passaggi per avviare il progetto in locale.
 
-Prerequisiti
-Node.js (versione 16 o successiva)
+### Prerequisiti
 
-Un account Google per creare un progetto Firebase/Google Cloud.
+- Node.js (versione 16 o successiva)
+
+- Un account Google per creare un progetto Firebase/Google Cloud.
 
 1. Clona il Repository
 git clone https://github.com/tuo-username/tuo-repository.git
