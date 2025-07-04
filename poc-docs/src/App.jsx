@@ -365,7 +365,7 @@ function App() {
                 {isEditMode ? ( 
                   <div className="document-editor">
                     <Editor
-                        apiKey='INSERISCI_LA_TUA_CHIAVE_TINYMCE_QUI'
+                        apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
                         value={editingContent}
                         init={{ height: "100%", menubar: false, plugins: 'lists link image paste help wordcount', toolbar: 'undo redo | blocks | bold italic | bullist numlist | link' }}
                         onEditorChange={(content) => setEditingContent(content)}
