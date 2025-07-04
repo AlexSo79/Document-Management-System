@@ -1,95 +1,67 @@
-# Knowledge Base MVP - Un Sistema di Gestione Documentale Intelligente
+# Knowledge Base MVP - Sistema di Gestione Documentale Intelligente
 
-Questo repository contiene il codice sorgente per un'applicazione web avanzata per la gestione documentale, costruita con React e Firebase. L'applicazione è progettata per superare i limiti dei sistemi di archiviazione tradizionali basati su cartelle, adottando una filosofia incentrata sui metadati, workflow di approvazione e integrazione con l'intelligenza artificiale, ispirata a piattaforme enterprise come M-Files.
+Questo repository contiene una webapp React per la gestione documentale avanzata, con autenticazione Firebase, gestione metadati, workflow di approvazione, versionamento, ruoli utente e suggerimento automatico dei metadati tramite AI (Google Gemini).
 
-## Funzionalità Principali
+## Funzionalità Implementate
 
-L'applicazione è stata sviluppata attraverso una roadmap incrementale, implementando le seguenti funzionalità:
-
-- Gestione basata sui Metadati (v1.1): Ogni documento è definito da ciò che è, non da dove si trova. L'interfaccia permette di visualizzare e modificare metadati chiave come "Tipo di Documento", "Stato" e "Reparto".
-
-- Workflow di Approvazione (v1.2): Un ciclo di vita del documento che permette di spostare un file attraverso stati come Bozza, In Approvazione, Approvato e Rifiutato, con azioni contestuali disponibili per gli utenti appropriati.
-
-- Controllo delle Versioni (v1.3): Ogni salvataggio crea una nuova versione del documento, preservando la cronologia completa delle modifiche. L'interfaccia permette di visualizzare e ripristinare le versioni precedenti.
-
-- Gestione Utenti e Permessi (v2.0): Sistema di autenticazione reale (Email/Password) con tre ruoli utente:
-
-  - Amministratore: Controllo completo sul sistema e sui documenti.
-
-  - Editor: Può creare e modificare documenti, partecipando ai workflow.
-
-  - Lettore: Può solo visualizzare e cercare i documenti.
-
-- Integrazione AI (v2.1): Utilizzo dell'API di Google Gemini per analizzare il contenuto dei documenti e suggerire automaticamente i metadati (tipo e reparto), riducendo l'inserimento manuale e aumentando la coerenza.
+- **Gestione Metadati**: Ogni documento ha metadati chiave (`tipo_documento`, `stato`, `reparto`, `data_creazione`). I valori sono selezionabili da liste predefinite.
+- **Workflow di Approvazione**: Stati supportati: Bozza, In Approvazione, Approvato, Rifiutato, Pubblicato. Azioni contestuali in base al ruolo.
+- **Controllo Versioni**: Ogni modifica crea una nuova versione, consultabile nella cronologia.
+- **Gestione Utenti e Permessi**: Autenticazione Firebase (Email/Password). Ruoli: Amministratore, Editor, Lettore. I permessi sono gestiti lato client e memorizzati in Firestore.
+- **Integrazione AI**: Tramite Google Gemini API, è possibile analizzare il contenuto di un documento e ricevere suggerimenti automatici per tipo documento e reparto.
+- **Editor WYSIWYG**: TinyMCE integrato per la modifica dei contenuti.
+- **Filtri e Ricerca**: Filtri per tipo documento e stato nella sidebar.
 
 ## Stack Tecnologico
 
-- Frontend: React (con Vite per il setup)
+- **Frontend**: React 19 + Vite
+- **Editor**: TinyMCE (via `@tinymce/tinymce-react`)
+- **Backend/Database**: Firebase (Firestore, Authentication)
+- **AI**: Google Gemini API
+- **Linting**: ESLint
 
-- Backend & Database: Google Firebase (Firestore Database, Authentication)
+## Struttura del Codice
 
-- Editor di Testo: TinyMCE
+- Tutto il codice principale si trova in `poc-docs/src/`:
+  - `App.jsx`: logica principale, autenticazione, gestione documenti, workflow, AI, versioni.
+  - `data.json`: dati di esempio (non usati in produzione).
+  - `App.css` e `index.css`: stili.
+- Configurazione Vite e ESLint in `poc-docs/`.
 
-- Intelligenza Artificiale: Google Gemini API
-
-## Setup e Installazione
-
-Segui questi passaggi per avviare il progetto in locale.
+## Setup e Avvio
 
 ### Prerequisiti
 
-- Node.js (versione 16 o successiva)
+- Node.js 16+
+- Un progetto Firebase e una chiave API Gemini
 
-- Un account Google per creare un progetto Firebase/Google Cloud.
+### Passaggi
 
-1. Clona il Repository
+1. **Clona il repository**
+2. **Installa le dipendenze**
+   ```sh
+   npm install
+   ```
+   (da dentro la cartella `poc-docs`)
 
-2. Installa le Dipendenze
-Esegui il seguente comando per installare tutte le librerie necessarie:
+3. **Configura Firebase e Gemini**
+   - Crea un file `.env.local` in `poc-docs/`.
+   - Inserisci le chiavi di Firebase e Gemini.
 
-npm install
+4. **Avvia il server di sviluppo**
+   ```sh
+   npm run dev
+   ```
+   L'app sarà disponibile su [http://localhost:5173](http://localhost:5173).
 
-3. Configurazione di Firebase
+## Note di Sicurezza
 
-Vai alla Console di Firebase e crea un nuovo progetto.
+- Le chiavi API sono caricate tramite variabili d'ambiente Vite (`.env.local`).
+- I permessi utente sono gestiti lato client: per produzione è necessario rafforzare la sicurezza con regole Firestore adeguate.
 
-All'interno del progetto, vai su Costruisci > Authentication > Metodi di accesso e abilita "Email/Password".
+## TODO e Limitazioni
 
-Vai su Costruisci > Firestore Database, crea un database e avvialo in modalità di test.
-
-Nelle Impostazioni progetto (icona a forma di ingranaggio), registra una nuova app web.
-
-Copia l'oggetto di configurazione firebaseConfig.
-
-4. Configurazione dell'API di Gemini
-
-Vai alla Console di Google Cloud e assicurati che il progetto selezionato sia lo stesso di Firebase.
-
-Vai su API e servizi > Libreria, cerca "Generative Language API" e abilitala.
-
-Assicurati che al progetto sia collegato un account di fatturazione attivo.
-
-Vai su API e servizi > Credenziali, clicca su "+ CREA CREDENZIALI" e seleziona "Chiave API".
-
-Copia la chiave API generata.
-
-5. Inserisci le Chiavi nel Codice
-
-Apri il file src/App.jsx e inserisci le chiavi che hai appena copiato nei rispettivi segnaposto:
-
-// Inserisci la configurazione del tuo progetto Firebase
-const firebaseConfig = {
-  apiKey: "LA_TUA_CHIAVE_FIREBASE",
-  // ...
-};
-
-// ... all'interno della funzione handleAiAnalysis ...
-const apiKey = "LA_TUA_CHIAVE_API_GEMINI";
-
-6. Avvia l'Applicazione
-
-Una volta configurato tutto, avvia il server di sviluppo:
-
-npm run dev
-
-Apri il browser all'indirizzo http://localhost:5173 (o quello indicato nel terminale) per visualizzare l'applicazione.
+- **Gestione permessi lato server**: attualmente i permessi sono solo lato client.
+- **Gestione upload file**: non implementata.
+- **Notifiche e audit log**: non presenti.
+- **Test automatici**: non presenti.
